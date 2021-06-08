@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,10 @@
 		CE5646DC266CB2C6007B3D43 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5646DB266CB2C6007B3D43 /* ComplicationController.swift */; };
 		CE5646DE266CB2C7007B3D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5646DD266CB2C7007B3D43 /* Assets.xcassets */; };
 		CE5646E1266CB2C7007B3D43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5646E0266CB2C7007B3D43 /* Preview Assets.xcassets */; };
+		CE5646FF266CB84E007B3D43 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5646FE266CB84E007B3D43 /* User.swift */; };
+		CE564708266CB946007B3D43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE564707266CB946007B3D43 /* Alamofire */; };
+		CE56470E266CB9BF007B3D43 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE56470D266CB9BF007B3D43 /* SwiftyJSON */; };
+		CE564713266CC214007B3D43 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE564712266CC214007B3D43 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,8 @@
 		CE5646E0266CB2C7007B3D43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE5646E2266CB2C7007B3D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE5646E3266CB2C7007B3D43 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		CE5646FE266CB84E007B3D43 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE564712266CC214007B3D43 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE56470E266CB9BF007B3D43 /* SwiftyJSON in Frameworks */,
+				CE564708266CB946007B3D43 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +100,7 @@
 		CE5646B7266CB2C5007B3D43 = {
 			isa = PBXGroup;
 			children = (
+				CE564712266CC214007B3D43 /* MainView.swift */,
 				CE5646C6266CB2C5007B3D43 /* WatchApp WatchKit App */,
 				CE5646D2266CB2C6007B3D43 /* WatchApp WatchKit Extension */,
 				CE5646BF266CB2C5007B3D43 /* Products */,
@@ -120,6 +129,7 @@
 		CE5646D2266CB2C6007B3D43 /* WatchApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				CE5646FE266CB84E007B3D43 /* User.swift */,
 				CE5646D3266CB2C6007B3D43 /* WatchAppApp.swift */,
 				CE5646D5266CB2C6007B3D43 /* ContentView.swift */,
 				CE5646D7266CB2C6007B3D43 /* NotificationController.swift */,
@@ -157,6 +167,9 @@
 				CE5646C5266CB2C5007B3D43 /* PBXTargetDependency */,
 			);
 			name = WatchApp;
+			packageProductDependencies = (
+				CE5646F5266CB53C007B3D43 /* SDWebImageSwiftUI */,
+			);
 			productName = WatchApp;
 			productReference = CE5646BE266CB2C5007B3D43 /* WatchApp.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
@@ -191,6 +204,10 @@
 			dependencies = (
 			);
 			name = "WatchApp WatchKit Extension";
+			packageProductDependencies = (
+				CE564707266CB946007B3D43 /* Alamofire */,
+				CE56470D266CB9BF007B3D43 /* SwiftyJSON */,
+			);
 			productName = "WatchApp WatchKit Extension";
 			productReference = CE5646CE266CB2C6007B3D43 /* WatchApp WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
@@ -224,6 +241,11 @@
 				Base,
 			);
 			mainGroup = CE5646B7266CB2C5007B3D43;
+			packageReferences = (
+				CE5646F4266CB53C007B3D43 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				CE564706266CB946007B3D43 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CE56470C266CB9BF007B3D43 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = CE5646BF266CB2C5007B3D43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -268,7 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5646D8266CB2C6007B3D43 /* NotificationController.swift in Sources */,
+				CE564713266CC214007B3D43 /* MainView.swift in Sources */,
 				CE5646D6266CB2C6007B3D43 /* ContentView.swift in Sources */,
+				CE5646FF266CB84E007B3D43 /* User.swift in Sources */,
 				CE5646DC266CB2C6007B3D43 /* ComplicationController.swift in Sources */,
 				CE5646D4266CB2C6007B3D43 /* WatchAppApp.swift in Sources */,
 				CE5646DA266CB2C6007B3D43 /* NotificationView.swift in Sources */,
@@ -553,6 +577,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE5646F4266CB53C007B3D43 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+		CE564706266CB946007B3D43 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+		CE56470C266CB9BF007B3D43 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE5646F5266CB53C007B3D43 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE5646F4266CB53C007B3D43 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		CE564707266CB946007B3D43 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE564706266CB946007B3D43 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CE56470D266CB9BF007B3D43 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE56470C266CB9BF007B3D43 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE5646B8266CB2C5007B3D43 /* Project object */;
 }
